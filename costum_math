@@ -1,0 +1,37 @@
+defmodule CostumMath do
+
+  defmodule SumTotal do
+    def math(x,y) do
+      x + y
+    end
+  end
+
+  defmodule SubstractTotal do
+    def math(x,y) do
+      x - y
+    end
+  end
+
+  defmodule Summation do
+      def add( x, 0 ) do
+          0
+      end
+
+    def add( x, y )  do
+        x  + add( x, y - 1 )
+    end
+  end
+  Summation.add(5,5)
+
+  defmodule Deduct do
+      def divide( x, 0 ) do
+          0
+      end
+
+    def divide( x, y )  do
+        x  - divide( x + 1, y )
+    end
+  end
+  Deduct.divide(5,5)
+
+end
