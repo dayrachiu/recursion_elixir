@@ -23,15 +23,20 @@ defmodule CostumMath do
   end
   Summation.add(5,5)
 
+
   defmodule Deduct do
-      def divide( x, 0 ) do
-          0
+      def divide( 0, y, z) do
+        z
       end
 
-    def divide( x, y )  do
-        x  - divide( x + 1, y )
+    def divide( x, y, z )  do
+      divide( x - y, y, z + 1 )
+    end
+
+    def divide(x, y) do
+      divide( x, y, 0 )
     end
   end
-  Deduct.divide(5,5)
-
+  Deduct.divide(10,2)
+  
 end
